@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Оплата выполненных работ</title>
+    <title>Регистрация на ремонт / диагностику</title>
     <script src="https://use.fontawesome.com/c4d0c48df6.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/media.css" />
@@ -19,34 +19,44 @@
   <body>
     <section class="section pay">
       <div class="container pay__container">
-        <h1 class="title pay__title">Оплата выполненных работ</h1>
+        <h1 class="title pay__title">Регистрация на ремонт / диагностику</h1>
 
         <form action="" class="form pay__form col">
           <div class="row pay__row">
             <div class="col pay__col">
               <input class="input pay__input" placeholder="ФИО Клиента" />
 
+              <label class="container-checkbox">Диагностика
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              
+              <label class="container-checkbox">Ремонт + Диагностика
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+
+              <input placeholder="dd.mm.yyyy" type="date" id="date" class="input pay__input" name="date">
+
+              <input class="input pay__input" type="time">
+
               <div class="custom-select">
                 <select>
-                  <option value="default">Выберите заказ</option>
-                  <option value="order1">Заказ 1</option>
-                  <option value="order2">Заказ 2</option>
-                  <option value="order3">Заказ 3</option>
-                  <option value="order4">Заказ 4</option>
-                  <option value="order5">Заказ 5</option>
-                  <option value="order6">Заказ 6</option>
-                  <option value="order7">Заказ 7</option>
-                  <option value="order8">Заказ 8</option>
-                  <option value="order9">Заказ 9</option>
-                  <option value="order10">Заказ 10</option>
-                  <option value="order11">Заказ 11</option>
-                  <option value="order12">Заказ 12</option>
+                  <option value="default">Выберите мастера</option>
+                  <option value="master1">Мастер 1</option>
+                  <option value="master2">Мастер 2</option>
+                  <option value="master3">Мастер 3</option>
+                  <option value="master4">Мастер 4</option>
+                  <option value="master5">Мастер 5</option>
+                  <option value="master6">Мастер 6</option>
+                  <option value="master7">Мастер 7</option>
+                  <option value="master8">Мастер 8</option>
+                  <option value="master9">Мастер 9</option>
+                  <option value="master10">Мастер 10</option>
+                  <option value="master11">Мастер 11</option>
+                  <option value="master12">Мастер 12</option>
                 </select>
               </div>
-
-              <div class="hr"></div>
-
-              <p class="pay__total"><b>Итого к оплате:</b> <span>0</span> руб. </p>
             </div>
 
             <div class="col pay__col">
@@ -54,7 +64,7 @@
                 name=""
                 id=""
                 cols="30"
-                rows="8"
+                rows="15"
                 class="input textarea pay__textarea"
                 placeholder="Комментарий"
               ></textarea>
@@ -65,8 +75,8 @@
                 <i class="fa-solid fa-arrow-right-to-bracket icon__i"></i>
             </a>
 
-            <button id="pay" class="btn pay_btn icon__btn" title="Оплатить">
-                <i class="fa-solid fa-wallet icon__i"></i>
+            <button id="pay" class="btn pay_btn icon__btn" title="Зарегистрироваться">
+                <i class="fa-solid fa-circle-plus icon__i"></i>
             </button>
           </div>
         </form>

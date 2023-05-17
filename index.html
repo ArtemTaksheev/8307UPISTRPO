@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Услуги</title>
+    <script src="https://use.fontawesome.com/c4d0c48df6.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/media.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  
+    
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Interface Of Information system</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/Features-Image-images.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
-    <link rel="stylesheet" href="assets/css/Pricing-Yearly--Monthly-badges.css">
-</head>
+  </head>
+  <body>
+    <section class="section start">
+        <div class="container start__container">
+            <h1 class="title start__title">Выберите услугу</h1>
 
-<body>
-    <section class="py-4 py-xl-5">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2>Добро пожаловать!<br>Введите свои данные</h2>
+            <div class="row start__row">
+                <div class="col start__col">
+                    <div class="card start__card">
+                        <h2 class="card__title">Регистрация на ремонт / диагностику</h2>
+                        <a href="registration.html" class="btn card__btn">Перейти</a>
+                    </div>
+
+                    <div class="card start__card">
+                        <h2 class="card__title">Оформление заказа на запчасти</h2>
+                        <a href="order.html" class="btn card__btn">Перейти</a>
+                    </div>
+                </div>
+
+                <div class="col start__col">
+                    <div class="card start__card">
+                        <h2 class="card__title">Оплата выполненных работ</h2>
+                        <a href="pay.html" class="btn card__btn">Перейти</a>
+                    </div>
+
+                    <div class="card start__card">
+                        <h2 class="card__title">Доступ к клиентской базе</h2>
+                        <a href="access-to-bd.html" class="btn card__btn">Перейти</a>
+                    </div>
                 </div>
             </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 col-xl-4">
-                    <form class="text-center" method="post">
-                        <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Login"></div>
-                        <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                        <div class="mb-3"><a class="btn btn-primary d-block w-100" role="button" href="start.html">Enter</a></div>
-                    </form>
-                </div>
-            </div>
+
+            <a href="login.html" class="btn icon__btn" title="Войти в систему">
+                <i class="fa-solid fa-arrow-right-to-bracket icon__i"></i>
+            </a>
         </div>
     </section>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
 
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
