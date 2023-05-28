@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Войти в систему</title>
+    <script src="https://use.fontawesome.com/c4d0c48df6.js"></script>
+<!--    <link rel="stylesheet" href="static/css/style.css" />-->
+<!--    <link rel="stylesheet" href="static/css/media.css" />-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="section login">
+      <div class="container login__container">
+        <h1 class="title login__title">
+          Добро пожаловать!<br />
+          Введите свои данные
+        </h1>
+
+        <form action="postuser" method = "POST" class="form login__form col">
+          {% csrf_token %}
+          <input name = "name" type="text" class="input login__input" placeholder="Логин" />
+          <input
+            name="password"
+            type="password"
+            class="input login__input"
+            placeholder="Пароль"
+          />
+
+          <button>Войти в систему</button>
+        </form>
+      </div>
+    </section>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+<style>
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 32px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 64px;
+}
+
+.btn {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    background: #0d6efd;
+    color: #FFFF;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.input {
+    color: #212529;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #a0a0a0;
+    margin-bottom: 16px;
+    outline: none;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.custom-select {
+    position: relative;
+    font-family: Arial;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected {
+    color: #212529;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #a0a0a0;
+    outline: none;
+    margin-bottom: 8px;
+    cursor: pointer;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 18px;
+    right: 16px;
+    width: 0;
+    height: 0;
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+
+    transition: all 0.5s ease-in-out;
+}
+
+.select-selected.select-arrow-active:after {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    top: 20px;
+}
+
+.select-selected.select-arrow-active {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25);
+}
+
+.select-items div {
+    color: #212529;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #a0a0a0;
+    outline: none;
+
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #FFF;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    border-radius: 8px;
+    border: 1px solid #a0a0a0;
+    max-height: 100px;
+    overflow: auto;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: #a0a0a0;
+}
+
+.input:hover,
+.input:focus,
+.input:active {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25);
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+    background-color: #0b5ed7;
+    color: #FFF;
+}
+
+.hr {
+    margin: 16px 0;
+    border-bottom: 1px solid #a0a0a0;
+    width: 100%;
+}
+
+.card {
+    padding: 32px;
+    border: 1px solid #a0a0a0;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.start__row {
+    justify-content: space-between;
+}
+
+.start__col {
+    width: 100%;
+    max-width: 48%;
+}
+
+.start__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.card__title {
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0 0 16px;
+}
+
+.icon__btn {
+    width: fit-content;
+}
+
+.icon__i {
+    font-size: 24px;
+}
+
+.login__container,
+.access-to-bd__container {
+    max-width: 400px;
+}
+
+.access-to-bd__textarea {
+    margin-bottom: 32px;
+}
+
+.access-to-bd__row {
+    justify-content: space-between;
+}
+
+.access-to-bd__btn {
+    padding: 12px 32px;
+}
+
+.pay__row {
+    justify-content: space-between;
+}
+
+.pay__col {
+    max-width: 48%;
+    width: 100%;
+}
+
+.pay__total {
+    font-size: 28px;
+    margin: 0;
+}
+
+.pay__row {
+    margin-bottom: 32px;
+}
+
+.row--between {
+    justify-content: space-between;
+}
+
+.order__input {
+    margin-top: 8px;
+}
+
+.container-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .container-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 4px;
+    background: #FFF;
+    border: 1px solid #a0a0a0;
+  }
+
+  .container-checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25);
+  }
+
+  .container-checkbox input:checked ~ .checkmark {
+    background-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25);
+  }
+
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .container-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .container-checkbox .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+</style>
+</html>
