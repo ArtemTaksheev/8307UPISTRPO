@@ -2,7 +2,7 @@ from .BaseModel import *
 
 
 class Payments(Base):
-    __tableName__ = 'Payments'
+    __tablename__ = 'Payments'
     PaymentOrderCode = Column(Integer, ForeignKey('Diagnostics.OrderCode'), primary_key=True)
     PaymentCarRegNum = Column(String(10), nullable=False)
     PaymentPriceToPay = Column(Integer, nullable=False)

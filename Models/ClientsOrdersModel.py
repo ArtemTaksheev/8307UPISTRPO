@@ -2,7 +2,7 @@ from .BaseModel import *
 
 
 class ClientsOrders(Base):
-    __tableName__ = 'ClientsOrders'
+    __tablename__ = 'ClientsOrders'
     OrderCode = Column(Integer, primary_key=True, autoincrement=True)
     ClientCode = Column(Integer, nullable=False)
     EmployeeCode = Column(Integer, ForeignKey('Employees.EmployeeCode'), nullable=False)
