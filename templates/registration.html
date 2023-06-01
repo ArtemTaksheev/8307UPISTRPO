@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Регистрация на ремонт / диагностику</title>
+    <script src="https://use.fontawesome.com/c4d0c48df6.js"></script>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/media.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="section pay">
+      <div class="container pay__container">
+        <h1 class="title pay__title">Регистрация на ремонт / диагностику</h1>
+
+        <form action="postregistration" method="post" class="form pay__form col" onsubmit="javascript: return process();">
+          <div class="row pay__row">
+            <div class="col pay__col">
+              <input class="input pay__input" placeholder="ФИО Клиента" name="name" />
+
+              <label class="container-checkbox">Диагностика
+                <input type="checkbox" name="diagnosis">
+                <span class="checkmark"></span>
+              </label>
+              
+              <label class="container-checkbox">Ремонт + Диагностика
+                <input type="checkbox" name="repairs">
+                <span class="checkmark"></span>
+              </label>
+
+              <input placeholder="dd.mm.yyyy" type="date" id="date" class="input pay__input" name="date">
+
+              <input class="input pay__input" type="time" name="time">
+
+              <input type="hidden" id="master" name="master" vlaue="<?php echo $row[1] ?>">
+              <div id = "masterdiv" class="custom-select">
+                <select>
+                  <option value="default">Выберите мастера</option>
+                  <option value="master1">{{name_master1}}</option>
+                  <option value="master2">Мастер 2</option>
+                  <option value="master3">Мастер 3</option>
+                  <option value="master4">Мастер 4</option>
+                  <option value="master5">Мастер 5</option>
+                  <option value="master6">Мастер 6</option>
+                  <option value="master7">Мастер 7</option>
+                  <option value="master8">Мастер 8</option>
+                  <option value="master9">Мастер 9</option>
+                  <option value="master10">Мастер 10</option>
+                  <option value="master11">Мастер 11</option>
+                  <option value="master12">Мастер 12</option>
+                </select>
+                <p><?php echo $row[1] ?></p>
+              </div>
+            </div>
+
+            <div class="col pay__col">
+              <textarea
+                name="Commentary"
+                id=""
+                cols="30"
+                rows="15"
+                class="input textarea pay__textarea"
+                placeholder="Комментарий"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row row--between pay__row--between">
+            <a href="login" class="btn icon__btn" title="Войти в систему">
+                <i class="fa-solid fa-arrow-right-to-bracket icon__i"></i>
+            </a>
+
+            <button id="pay" class="btn pay_btn icon__btn" title="Зарегистрироваться">
+              {% csrf_token %}
+                <i class="fa-solid fa-circle-plus icon__i"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script>
+    function process() {
+      document.getElementById("master").value = document.getElementById("masterdiv").innerHTML;
+      return true;
+    }
+    </script>
+    <script src="static/js/script.js"></script>
+  </body>
+</html>

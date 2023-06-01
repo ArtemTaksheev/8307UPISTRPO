@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Оформление Поставщика на запчасти</title>
+    <script src="https://use.fontawesome.com/c4d0c48df6.js"></script>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/media.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="section pay">
+      <div class="container pay__container">
+        <h1 class="title pay__title">Оформление заказа на запчасти</h1>
+
+        <form action="" class="form pay__form col">
+          <div class="row pay__row">
+            <div class="col pay__col">
+              <input class="input pay__input" placeholder="Наименование запчасти" />
+
+              <input class="input pay__input" placeholder="Номер заказа" />
+
+              <div class="custom-select">
+                <select>
+                  <option value="default">Выберите поставщика</option>
+                  <option value="supplier1">Поставщик 1</option>
+                  <option value="supplier2">Поставщик 2</option>
+                  <option value="supplier3">Поставщик 3</option>
+                  <option value="supplier4">Поставщик 4</option>
+                  <option value="supplier5">Поставщик 5</option>
+                  <option value="supplier6">Поставщик 6</option>
+                  <option value="supplier7">Поставщик 7</option>
+                  <option value="supplier8">Поставщик 8</option>
+                  <option value="supplier9">Поставщик 9</option>
+                  <option value="supplier10">Поставщик 10</option>
+                  <option value="supplier11">Поставщик 11</option>
+                  <option value="supplier12">Поставщик 12</option>
+                </select>
+              </div>
+
+              <input placeholder="dd.mm.yyyy" type="date" id="date" class="input pay__input order__input" name="trip-start">
+
+              <div class="hr"></div>
+
+              <p class="pay__total"><b>Итого к оплате:</b> <span>0</span> руб. </p>
+            </div>
+
+            <div class="col pay__col">
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="15"
+                class="input textarea pay__textarea"
+                placeholder="Список выполненных работ"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row row--between pay__row--between">
+            <a href="login" class="btn icon__btn" title="Войти в систему">
+                <i class="fa-solid fa-arrow-right-to-bracket icon__i"></i>
+            </a>
+
+            <button id="pay" class="btn pay_btn icon__btn" title="Оплатить">
+                <i class="fa-solid fa-wallet icon__i"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="static/js/script.js"></script>
+  </body>
+</html>

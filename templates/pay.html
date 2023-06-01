@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Оплата выполненных работ</title>
+    <script src="https://use.fontawesome.com/c4d0c48df6.js"></script>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/media.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="section pay">
+      <div class="container pay__container">
+        <h1 class="title pay__title">Оплата выполненных работ</h1>
+
+        <form action="" class="form pay__form col">
+          <div class="row pay__row">
+            <div class="col pay__col">
+              <input class="input pay__input" placeholder="ФИО Клиента" />
+
+              <div class="custom-select">
+                <select>
+                  <option value="default">Выберите заказ</option>
+                  {% if payments.count > 0 %}
+                  {% for payment in payments %}
+                  <option value="{{ payment.PaymentOrderCode }}">{{ payment.PaymentOrderCode }}</option>
+                  {% endfor %}
+                  {% endif %}
+                </select>
+              </div>
+
+              <div class="hr"></div>
+
+              <p class="pay__total"><b>Итого к оплате:</b> <span>0</span> руб. </p>
+            </div>
+
+            <div class="col pay__col">
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="8"
+                class="input textarea pay__textarea"
+                placeholder="Комментарий"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row row--between pay__row--between">
+            <a href="login" class="btn icon__btn" title="Войти в систему">
+                <i class="fa-solid fa-arrow-right-to-bracket icon__i"></i>
+            </a>
+
+            <button id="pay" class="btn pay_btn icon__btn" title="Оплатить">
+                <i class="fa-solid fa-wallet icon__i"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="static/js/script.js"></script>
+  </body>
+</html>

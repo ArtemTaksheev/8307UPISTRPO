@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Войти в систему</title>
+    <script src="https://use.fontawesome.com/c4d0c48df6.js"></script>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/media.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="section login">
+      <div class="container login__container">
+        <h1 class="title login__title">
+          Добро пожаловать!<br />
+          Введите свои данные
+        </h1>
+
+        <form action="postuser" method = "POST" class="form login__form col">
+          {% csrf_token %}
+          <input name = "name" type="text" class="input login__input" placeholder="Логин" />
+          <input
+            name="password"
+            type="password"
+            class="input login__input"
+            placeholder="Пароль"
+          />
+          <button class="btn auth__btn">Войти в систему</button>
+        </form>
+      </div>
+    </section>
+
+    <script src="static/js/script.js"></script>
+  </body>
+</html>

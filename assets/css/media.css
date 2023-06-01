@@ -1,0 +1,30 @@
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        max-width: none;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .access-to-bd__btn {
+        margin-bottom: 16px;
+    }
+
+    .pay__total {
+        margin-bottom: 16px;
+        font-size: 20px;
+    }
+
+    .pay__row {
+        flex-direction: column-reverse;
+    }
+
+    .pay__row--between {
+        flex-direction: row;
+    }
+}
