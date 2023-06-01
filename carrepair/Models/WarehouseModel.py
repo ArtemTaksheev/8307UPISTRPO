@@ -1,4 +1,4 @@
-from BaseModel import *
+from .BaseModel import *
 
 
 class Warehouse(Base):
