@@ -21,25 +21,24 @@
       <div class="container pay__container">
         <h1 class="title pay__title">Оплата выполненных работ</h1>
 
-        <form action="" class="form pay__form col">
+        <form action="renewpay" method = "POST" class="form pay__form col">
+          {% csrf_token %}
           <div class="row pay__row">
             <div class="col pay__col">
-              <input class="input pay__input" placeholder="ФИО Клиента" />
+              <input class="input pay__input" placeholder="ФИО Клиента" name = "clientname" value = {{namepay}}>
 
               <div class="custom-select">
                 <select>
                   <option value="default">Выберите заказ</option>
-                  {% if payments.count > 0 %}
-                  {% for payment in payments %}
-                  <option value="{{ payment.PaymentOrderCode }}">{{ payment.PaymentOrderCode }}</option>
-                  {% endfor %}
-                  {% endif %}
+                  <option value="12" selected>Мастер 1</option>
+                  <option value="13">Мастер 2</option>
+                  <option value="14">Мастер 3</option>
                 </select>
               </div>
 
               <div class="hr"></div>
 
-              <p class="pay__total"><b>Итого к оплате:</b> <span>0</span> руб. </p>
+              <p class="pay__total"><b>Итого к оплате:</b> <span>{{price}}</span> руб. </p>
             </div>
 
             <div class="col pay__col">
@@ -50,7 +49,7 @@
                 rows="8"
                 class="input textarea pay__textarea"
                 placeholder="Комментарий"
-              ></textarea>
+              >{{comment}}</textarea>
             </div>
           </div>
           <div class="row row--between pay__row--between">

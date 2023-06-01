@@ -23,27 +23,32 @@
             Клиентская база
         </h1>
 
-        <form action="" class="form access-to-bd__form col">
+        <form action="renewdb" method="POST" class="form access-to-bd__form col">
+          {% csrf_token %}
           <textarea 
           name="" 
           id="" 
           cols="30" 
           rows="10" 
           class="input textarea access-to-bd__textarea" 
-          placeholder="Код клиента, ФИО клиента, мастер, услуга, машина"></textarea>
+          placeholder="Код клиента, ФИО клиента, мастер, услуга, машина">{{base_info}}</textarea>
 
           <div class="row access-to-bd__row">
-            <button id="output" class="btn access-to-bd__btn">
+            <button id="output" class="btn access-to-bd__btn" name = output>
                Вывести
             </button>
 
-            <button id="clear" class="btn access-to-bd__btn">
+            <button id="clear" class="btn access-to-bd__btn" name = clear>
                 Очистить
             </button>
 
-            <button id="reload" class="btn access-to-bd__btn">
-                Обновить
-            </button>
+          </div>
+          <br>
+          <div class="row row--between pay__row--between">
+            <a href="login" class="btn icon__btn" title="Войти в систему">
+                <i class="fa-solid fa-arrow-right-to-bracket icon__i"></i>
+            </a>
+
           </div>
         </form>
       </div>

@@ -6,14 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8dcfc852-4a03-42a3-a554-aaf2cde80fd5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ClientsOrdersModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ClientsOrdersModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DiagnosticsModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DiagnosticsModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/FinishedJobsModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/FinishedJobsModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/PaymentsModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/PaymentsModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/PriceListModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/PriceListModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/RepairsModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/RepairsModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/SellersModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/SellersModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/WarehouseModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/WarehouseModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carrepair/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/carrepair/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/access-to-bd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/access-to-bd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +38,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/django1/8307UPISTRPO&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/django1/8307UPISTRPO",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\django\carrepair" />

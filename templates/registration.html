@@ -40,7 +40,7 @@
 
               <input class="input pay__input" type="time" name="time">
 
-              <input type="hidden" id="master" name="master" vlaue="<?php echo $row[1] ?>">
+              <input type="hidden" id="master" name="master">
               <div id = "masterdiv" class="custom-select">
                 <select>
                   <option value="default">Выберите мастера</option>
@@ -57,7 +57,6 @@
                   <option value="master11">Мастер 11</option>
                   <option value="master12">Мастер 12</option>
                 </select>
-                <p><?php echo $row[1] ?></p>
               </div>
             </div>
 
@@ -69,7 +68,7 @@
                 rows="15"
                 class="input textarea pay__textarea"
                 placeholder="Комментарий"
-              ></textarea>
+              >{{registered}}</textarea>
             </div>
           </div>
           <div class="row row--between pay__row--between">
@@ -85,6 +84,7 @@
         </form>
       </div>
     </section>
+
 
     <script>
     function process() {

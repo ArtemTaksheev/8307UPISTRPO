@@ -21,17 +21,18 @@
       <div class="container pay__container">
         <h1 class="title pay__title">Оформление заказа на запчасти</h1>
 
-        <form action="" class="form pay__form col">
+        <form action="reneworder" method = "POST" class="form pay__form col">
+          {% csrf_token %}
           <div class="row pay__row">
             <div class="col pay__col">
-              <input class="input pay__input" placeholder="Наименование запчасти" />
+              <input class="input pay__input" placeholder="Наименование запчасти" name = ordername value={{partnameorder}} >
 
-              <input class="input pay__input" placeholder="Номер заказа" />
+              <input class="input pay__input" placeholder="Номер заказа" name = ordernum value={{ordernumorder}} >
 
               <div class="custom-select">
                 <select>
                   <option value="default">Выберите поставщика</option>
-                  <option value="supplier1">Поставщик 1</option>
+                  <option value="supplier1">{{supplier1}}</option>
                   <option value="supplier2">Поставщик 2</option>
                   <option value="supplier3">Поставщик 3</option>
                   <option value="supplier4">Поставщик 4</option>
@@ -46,11 +47,11 @@
                 </select>
               </div>
 
-              <input placeholder="dd.mm.yyyy" type="date" id="date" class="input pay__input order__input" name="trip-start">
+              <input value={{dateorder}} placeholder="dd.mm.yyyy" type="date" id="date" class="input pay__input order__input" name="trip-start">
 
               <div class="hr"></div>
 
-              <p class="pay__total"><b>Итого к оплате:</b> <span>0</span> руб. </p>
+              <p class="pay__total"><b>Итого к оплате:</b> <span>{{priceorder}}</span> руб. </p>
             </div>
 
             <div class="col pay__col">
@@ -61,7 +62,8 @@
                 rows="15"
                 class="input textarea pay__textarea"
                 placeholder="Список выполненных работ"
-              ></textarea>
+                name = workorder
+              >{{workorder}}</textarea>
             </div>
           </div>
           <div class="row row--between pay__row--between">

@@ -19,6 +19,9 @@ from carrepair import views
 
 urlpatterns = [
     path('index', views.index, name = 'index'),
+    path('renewpay', views.renewpay, name = 'renewpay'),
+    path('reneworder', views.reneworder, name = 'reneworder'),
+    path('renewdb', views.renewdb, name = 'renewdb'),
     path('registration', views.registration, name = 'registration'),
     path('order', views.order, name = 'order'),
     path('pay', views.pay, name = 'pay'),
