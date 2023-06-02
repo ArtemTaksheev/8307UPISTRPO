@@ -16,22 +16,13 @@ logger = logging.getLogger(__name__)
 
 
 context = {}
+context['base_info1'] = ""
 
 def index(request):
     return render(request, "index.html")
 
 def postuser(request):
     # получаем из данных запроса POST отправленные через форму данные
-    context['price'] = "0"
-    context['priceorder'] = "0"
-    context['supplier1'] = 'ООО "Колёса"'
-    context['partnameorder'] = ""
-    context['ordernumorder'] = ""
-    context['dateorder'] = ""
-    context['base_info'] = ""
-    context['registered'] = ""
-    context['namepay'] = ""
-    context['comment'] = ""
     name = request.POST.get("name", "Undefined")
     password = request.POST.get("password", 1)
     #result = SQLRequest()
@@ -47,19 +38,32 @@ def postuser(request):
 def postregistration(request):
     # получаем из данных запроса POST отправленные через форму данные
     master = request.POST.get("master", "Undefined")
+    regname = request.POST.get("name", "Undefined")
+    regdate = request.POST.get("date", "Undefined")
+    regtime = request.POST.get("time", "Undefined")
+    diagnosis = request.POST.get("diagnosis", "off")
+    repairs = request.POST.get("repairs", "off")
     master = master[master.find('selected') + 10:]
     master = master[:master.find('<')]
-    logger.warning('Got info about user at ' + str(datetime.datetime.now()) + ', Username:' + str(master))
+    context['base_info1'] += str(regname) + ', ' + str(master) + ', ' + str(regdate) + ', ' + str(regtime) + ', diagnosis:' + str(diagnosis) + ', repairs:' + str(repairs) + ";\n"
+    logger.warning(str(context['base_info1']))
     context['registered'] = "Зарегистрировано!"
     return redirect('registration')
 
 def renewpay(request):
     # получаем из данных запроса POST отправленные через форму данные
     name = request.POST.get("clientname", "Undefined")
-    context['price'] = "120"
-    context['comment'] = "Information here"
+    masterpay = request.POST.get("master", "Undefined")
+    masterpay = masterpay[masterpay.find('selected') + 12:]
+    masterpay = masterpay[:masterpay.find('<')]
+    if (masterpay == "Мастер 1") & (name == "Владислав"):
+        context['price'] = "120"
+        context['comment'] = "Comm"
+    else:
+        context['price'] = "0"
+        context['comment'] = "Неверная комбинация клиента и мастера!"
     context['namepay'] = name
-    logger.warning('Got info about user at ' + str(name))
+    logger.warning('Got info about user at ' + str(masterpay))
     return redirect('pay')
 
 def reneworder(request):
@@ -81,8 +85,7 @@ def reneworder(request):
 def renewdb(request):
     # получаем из данных запроса POST отправленные через форму данные
     if 'output' in request.POST:
-        base_info = 'Name and stuff'
-        context['base_info'] = base_info
+        context['base_info'] = context['base_info1']
         return redirect('access')
     elif 'clear' in request.POST:
         base_info = ''
@@ -91,6 +94,15 @@ def renewdb(request):
 
 
 def index(request):
+    context['price'] = "0"
+    context['priceorder'] = "0"
+    context['supplier1'] = 'ООО "Колёса"'
+    context['partnameorder'] = ""
+    context['ordernumorder'] = ""
+    context['dateorder'] = ""
+    context['registered'] = ""
+    context['namepay'] = ""
+    context['comment'] = ""
     return render(request, "index.html")
 
 def registration(request):

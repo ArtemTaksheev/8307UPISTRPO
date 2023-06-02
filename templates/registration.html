@@ -22,6 +22,7 @@
         <h1 class="title pay__title">Регистрация на ремонт / диагностику</h1>
 
         <form action="postregistration" method="post" class="form pay__form col" onsubmit="javascript: return process();">
+          {% csrf_token %}
           <div class="row pay__row">
             <div class="col pay__col">
               <input class="input pay__input" placeholder="ФИО Клиента" name="name" />
@@ -72,12 +73,12 @@
             </div>
           </div>
           <div class="row row--between pay__row--between">
-            <a href="login" class="btn icon__btn" title="Войти в систему">
+            <a href="index" class="btn icon__btn" title="Войти в систему">
                 <i class="fa-solid fa-arrow-right-to-bracket icon__i"></i>
             </a>
 
             <button id="pay" class="btn pay_btn icon__btn" title="Зарегистрироваться">
-              {% csrf_token %}
+
                 <i class="fa-solid fa-circle-plus icon__i"></i>
             </button>
           </div>

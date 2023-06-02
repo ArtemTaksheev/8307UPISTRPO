@@ -21,14 +21,15 @@
       <div class="container pay__container">
         <h1 class="title pay__title">Оплата выполненных работ</h1>
 
-        <form action="renewpay" method = "POST" class="form pay__form col">
+        <form action="renewpay" method = "POST"  class="form pay__form col"  onsubmit="javascript: return process();">
           {% csrf_token %}
           <div class="row pay__row">
             <div class="col pay__col">
               <input class="input pay__input" placeholder="ФИО Клиента" name = "clientname" value = {{namepay}}>
 
+              <input type="hidden" id="master" name="master">
               <div class="custom-select">
-                <select>
+                <select  id = "masterdiv">
                   <option value="default">Выберите заказ</option>
                   <option value="12" selected>Мастер 1</option>
                   <option value="13">Мастер 2</option>
@@ -53,7 +54,7 @@
             </div>
           </div>
           <div class="row row--between pay__row--between">
-            <a href="login" class="btn icon__btn" title="Войти в систему">
+            <a href="index" class="btn icon__btn" title="Войти в систему">
                 <i class="fa-solid fa-arrow-right-to-bracket icon__i"></i>
             </a>
 
@@ -64,6 +65,12 @@
         </form>
       </div>
     </section>
+    <script>
+    function process() {
+      document.getElementById("master").value = document.getElementById("masterdiv").innerHTML;
+      return true;
+    }
+    </script>
 
     <script src="static/js/script.js"></script>
   </body>
