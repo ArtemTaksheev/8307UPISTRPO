@@ -24,7 +24,8 @@
           Добро пожаловать!<br />
           Введите свои данные
         </h1>
-
+        {{login_succ}}
+        <br>
         <form action="postuser" method = "POST" class="form login__form col">
           {% csrf_token %}
           <input name = "name" type="text" class="input login__input" placeholder="Логин" />

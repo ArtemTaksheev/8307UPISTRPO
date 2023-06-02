@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, request
+from random import randrange
 
 from contextlib import contextmanager
 
@@ -17,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 context = {}
 context['base_info1'] = ""
+context['login_succ'] = ""
 
 def index(request):
     return render(request, "index.html")
@@ -33,7 +35,14 @@ def postuser(request):
     #    logger.warning("-----")
 
     logger.warning('Got info about user at ' + str(datetime.datetime.now()) + ', Username:' + str(name) + ' Pass:' + str(password))
-    return redirect('index')
+    if (name == "Владислав") & (password == "asd"):
+        return redirect('index')
+    elif (name != "Владислав"):
+        context['login_succ'] = "Неверное имя пользователя!"
+        return redirect('login')
+    elif (password != "asd"):
+        context['login_succ'] = "Неверный пароль!"
+        return redirect('login')
 
 def postregistration(request):
     # получаем из данных запроса POST отправленные через форму данные
@@ -57,7 +66,7 @@ def renewpay(request):
     masterpay = masterpay[masterpay.find('selected') + 12:]
     masterpay = masterpay[:masterpay.find('<')]
     if (masterpay == "Мастер 1") & (name == "Владислав"):
-        context['price'] = "120"
+        context['price'] = str(randrange(12, 100) * 10)
         context['comment'] = "Comm"
     else:
         context['price'] = "0"
@@ -121,4 +130,4 @@ def access(request):
     return render(request, "access-to-bd.html", context)
 
 def login(request):
-    return render(request, "login.html")
+    return render(request, "login.html", context)
